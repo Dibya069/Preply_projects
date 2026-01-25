@@ -1,0 +1,19 @@
+[ 2026-01-03 19:06:44,354 ] 69 ODP - INFO - ================================================================================
+[ 2026-01-03 19:06:44,354 ] 70 ODP - INFO - YOLOv7 Real-time Object Detection Pipeline Started
+[ 2026-01-03 19:06:44,354 ] 71 ODP - INFO - ================================================================================
+[ 2026-01-03 19:06:44,354 ] 44 ODP - INFO - Initializing YOLO Detector...
+[ 2026-01-03 19:06:44,354 ] 29 ODP - INFO - model exists at: /Users/dmohanty/Music/preply_proj/1st_proj/detect/train/weights/best.pt
+[ 2026-01-03 19:06:44,354 ] 61 ODP - INFO - Using device: cpu
+[ 2026-01-03 19:06:44,354 ] 66 ODP - INFO - Loading model with Ultralytics from: /Users/dmohanty/Music/preply_proj/1st_proj/detect/train/weights/best.pt
+[ 2026-01-03 19:06:44,381 ] 76 ODP - INFO - Model loaded successfully with Ultralytics
+[ 2026-01-03 19:06:44,381 ] 77 ODP - INFO - Model loaded successfully with 3 classes
+[ 2026-01-03 19:06:44,381 ] 78 ODP - INFO - Classes: ['Anime', 'Victoriya', 'fight']
+[ 2026-01-03 19:06:44,381 ] 93 ODP - INFO - Starting real-time object detection...
+[ 2026-01-03 19:06:44,381 ] 94 ODP - INFO - Press 'q' in the detection window to quit
+[ 2026-01-03 19:06:44,381 ] 208 ODP - INFO - Starting camera detection with camera ID: 0
+[ 2026-01-03 19:06:45,301 ] 216 ODP - INFO - Camera opened successfully
+[ 2026-01-03 19:06:45,303 ] 217 ODP - INFO - Press 'q' to quit the detection
+[ 2026-01-03 19:06:49,226 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/server.py] at line number [259] error message [OpenCV(4.12.0) /Users/xperience/GHA-Actions-OpenCV/_work/opencv-python/opencv-python/opencv/modules/imgproc/src/resize.cpp:4208: error: (-215:Assertion failed) !ssize.empty() in function 'resize'
+]
+[ 2026-01-03 19:06:49,226 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/main.py] at line number [96] error message [Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/server.py] at line number [259] error message [OpenCV(4.12.0) /Users/xperience/GHA-Actions-OpenCV/_work/opencv-python/opencv-python/opencv/modules/imgproc/src/resize.cpp:4208: error: (-215:Assertion failed) !ssize.empty() in function 'resize'
+]]

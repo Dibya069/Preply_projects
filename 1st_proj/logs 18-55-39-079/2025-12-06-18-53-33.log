@@ -1,0 +1,5 @@
+[ 2025-12-06 18:53:33,579 ] 9 ODP - INFO - Starting the project
+[ 2025-12-06 18:53:33,579 ] 11 ODP - INFO - Loading the data
+[ 2025-12-06 18:53:33,579 ] 13 ODP - INFO - Data loaded : 0.25
+[ 2025-12-06 18:53:33,579 ] 17 ODP - INFO - Starting the project
+[ 2025-12-06 18:53:33,579 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/main.py] at line number [18] error message [division by zero]

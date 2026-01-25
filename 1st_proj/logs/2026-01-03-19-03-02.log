@@ -1,0 +1,19 @@
+[ 2026-01-03 19:03:17,226 ] 69 ODP - INFO - ================================================================================
+[ 2026-01-03 19:03:17,227 ] 70 ODP - INFO - YOLOv7 Real-time Object Detection Pipeline Started
+[ 2026-01-03 19:03:17,227 ] 71 ODP - INFO - ================================================================================
+[ 2026-01-03 19:03:17,227 ] 44 ODP - INFO - Initializing YOLO Detector...
+[ 2026-01-03 19:03:17,227 ] 29 ODP - INFO - model exists at: /Users/dmohanty/Music/preply_proj/1st_proj/detect/train/weights/best.pt
+[ 2026-01-03 19:03:17,227 ] 61 ODP - INFO - Using device: cpu
+[ 2026-01-03 19:03:17,228 ] 66 ODP - INFO - Loading model with Ultralytics from: /Users/dmohanty/Music/preply_proj/1st_proj/detect/train/weights/best.pt
+[ 2026-01-03 19:03:17,373 ] 76 ODP - INFO - Model loaded successfully with Ultralytics
+[ 2026-01-03 19:03:17,373 ] 77 ODP - INFO - Model loaded successfully with 3 classes
+[ 2026-01-03 19:03:17,373 ] 78 ODP - INFO - Classes: ['Anime', 'Victoriya', 'fight']
+[ 2026-01-03 19:03:17,373 ] 93 ODP - INFO - Starting real-time object detection...
+[ 2026-01-03 19:03:17,373 ] 94 ODP - INFO - Press 'q' in the detection window to quit
+[ 2026-01-03 19:03:17,373 ] 208 ODP - INFO - Starting camera detection with camera ID: 0
+[ 2026-01-03 19:03:20,461 ] 216 ODP - INFO - Camera opened successfully
+[ 2026-01-03 19:03:20,462 ] 217 ODP - INFO - Press 'q' to quit the detection
+[ 2026-01-03 19:03:22,574 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/components/utils.py] at line number [43] error message [module 'numpy.random' has no attribute 'speed']
+[ 2026-01-03 19:03:22,574 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/components/utils.py] at line number [70] error message [Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/components/utils.py] at line number [43] error message [module 'numpy.random' has no attribute 'speed']]
+[ 2026-01-03 19:03:22,574 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/server.py] at line number [235] error message [Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/components/utils.py] at line number [70] error message [Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/components/utils.py] at line number [43] error message [module 'numpy.random' has no attribute 'speed']]]
+[ 2026-01-03 19:03:22,574 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/main.py] at line number [96] error message [Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/server.py] at line number [235] error message [Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/components/utils.py] at line number [70] error message [Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/components/utils.py] at line number [43] error message [module 'numpy.random' has no attribute 'speed']]]]

@@ -1,0 +1,25 @@
+[ 2026-01-03 19:06:33,249 ] 69 ODP - INFO - ================================================================================
+[ 2026-01-03 19:06:33,249 ] 70 ODP - INFO - YOLOv7 Real-time Object Detection Pipeline Started
+[ 2026-01-03 19:06:33,249 ] 71 ODP - INFO - ================================================================================
+[ 2026-01-03 19:06:33,249 ] 44 ODP - INFO - Initializing YOLO Detector...
+[ 2026-01-03 19:06:33,249 ] 29 ODP - INFO - model exists at: /Users/dmohanty/Music/preply_proj/1st_proj/detect/train/weights/best.pt
+[ 2026-01-03 19:06:33,249 ] 61 ODP - INFO - Using device: cpu
+[ 2026-01-03 19:06:33,249 ] 66 ODP - INFO - Loading model with Ultralytics from: /Users/dmohanty/Music/preply_proj/1st_proj/detect/train/weights/best.pt
+[ 2026-01-03 19:06:33,285 ] 76 ODP - INFO - Model loaded successfully with Ultralytics
+[ 2026-01-03 19:06:33,285 ] 77 ODP - INFO - Model loaded successfully with 3 classes
+[ 2026-01-03 19:06:33,285 ] 78 ODP - INFO - Classes: ['Anime', 'Victoriya', 'fight']
+[ 2026-01-03 19:06:33,285 ] 93 ODP - INFO - Starting real-time object detection...
+[ 2026-01-03 19:06:33,285 ] 94 ODP - INFO - Press 'q' in the detection window to quit
+[ 2026-01-03 19:06:33,285 ] 208 ODP - INFO - Starting camera detection with camera ID: 0
+[ 2026-01-03 19:06:34,191 ] 216 ODP - INFO - Camera opened successfully
+[ 2026-01-03 19:06:34,192 ] 217 ODP - INFO - Press 'q' to quit the detection
+[ 2026-01-03 19:06:34,634 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/server.py] at line number [259] error message [OpenCV(4.12.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Input argument doesn't provide sequence protocol
+>  - Can't parse 'dsize'. Input argument doesn't provide sequence protocol
+]
+[ 2026-01-03 19:06:34,634 ] 15 ODP - INFO - Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/main.py] at line number [96] error message [Error occured in file: [/Users/dmohanty/Music/preply_proj/1st_proj/server.py] at line number [259] error message [OpenCV(4.12.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Input argument doesn't provide sequence protocol
+>  - Can't parse 'dsize'. Input argument doesn't provide sequence protocol
+]]

@@ -1,0 +1,20 @@
+[ 2026-01-03 19:17:03,029 ] 69 ODP - INFO - ================================================================================
+[ 2026-01-03 19:17:03,029 ] 70 ODP - INFO - YOLOv7 Real-time Object Detection Pipeline Started
+[ 2026-01-03 19:17:03,029 ] 71 ODP - INFO - ================================================================================
+[ 2026-01-03 19:17:03,030 ] 44 ODP - INFO - Initializing YOLO Detector...
+[ 2026-01-03 19:17:03,030 ] 29 ODP - INFO - model exists at: /Users/dmohanty/Music/preply_proj/1st_proj/detect/train/weights/best.pt
+[ 2026-01-03 19:17:03,030 ] 61 ODP - INFO - Using device: cpu
+[ 2026-01-03 19:17:03,030 ] 66 ODP - INFO - Loading model with Ultralytics from: /Users/dmohanty/Music/preply_proj/1st_proj/detect/train/weights/best.pt
+[ 2026-01-03 19:17:03,066 ] 76 ODP - INFO - Model loaded successfully with Ultralytics
+[ 2026-01-03 19:17:03,066 ] 77 ODP - INFO - Model loaded successfully with 3 classes
+[ 2026-01-03 19:17:03,066 ] 78 ODP - INFO - Classes: ['Anime', 'Victoriya', 'fight']
+[ 2026-01-03 19:17:03,066 ] 93 ODP - INFO - Starting real-time object detection...
+[ 2026-01-03 19:17:03,066 ] 94 ODP - INFO - Press 'q' in the detection window to quit
+[ 2026-01-03 19:17:03,066 ] 208 ODP - INFO - Starting camera detection with camera ID: 0
+[ 2026-01-03 19:17:03,999 ] 216 ODP - INFO - Camera opened successfully
+[ 2026-01-03 19:17:03,999 ] 217 ODP - INFO - Press 'q' to quit the detection
+[ 2026-01-03 19:17:32,830 ] 266 ODP - INFO - Quitting detection...
+[ 2026-01-03 19:17:32,905 ] 272 ODP - INFO - Camera detection stopped successfully
+[ 2026-01-03 19:17:32,905 ] 105 ODP - INFO - ================================================================================
+[ 2026-01-03 19:17:32,905 ] 106 ODP - INFO - YOLOv7 Real-time Object Detection Pipeline Completed
+[ 2026-01-03 19:17:32,905 ] 107 ODP - INFO - ================================================================================
