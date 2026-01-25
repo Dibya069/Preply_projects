@@ -1,0 +1,13 @@
+[ 2026-01-17 19:04:01,417 ] 18 root - INFO - Step 1: Data Ingestion
+[ 2026-01-17 19:04:01,417 ] 40 root - INFO - Data Ingestion Mode START
+[ 2026-01-17 19:04:01,421 ] 51 root - INFO - Loaded data from file: /Users/dmohanty/Music/preply_proj/ml_augi-2/upload/cancer patient data sets.csv
+[ 2026-01-17 19:04:01,423 ] 59 root - INFO - Converted 'Level' column to numeric using LabelEncoder
+[ 2026-01-17 19:04:01,423 ] 60 root - INFO - Label mapping: {'High': np.int64(0), 'Low': np.int64(1), 'Medium': np.int64(2)}
+[ 2026-01-17 19:04:01,424 ] 75 root - INFO - Dropped column: index
+[ 2026-01-17 19:04:01,424 ] 75 root - INFO - Dropped column: Patient Id
+[ 2026-01-17 19:04:01,428 ] 79 root - INFO - Raw Data is created
+[ 2026-01-17 19:04:01,428 ] 28 root - INFO - Data_dealing with Outliers
+[ 2026-01-17 19:04:01,428 ] 84 root - INFO - Outliers dealing Completed for Age column
+[ 2026-01-17 19:04:01,433 ] 89 root - INFO - train and test Data is created
+[ 2026-01-17 19:04:01,433 ] 21 root - INFO - Train data: artifacts/train.csv
+[ 2026-01-17 19:04:01,433 ] 22 root - INFO - Test data: artifacts/test.csv

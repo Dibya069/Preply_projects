@@ -1,0 +1,34 @@
+[ 2026-01-24 19:00:07,583 ] 18 root - INFO - Step 1: Data Ingestion
+[ 2026-01-24 19:00:07,583 ] 40 root - INFO - Data Ingestion Mode START
+[ 2026-01-24 19:00:07,590 ] 51 root - INFO - Loaded data from file: /Users/dmohanty/Music/preply_proj/ml_augi-2/upload/cancer patient data sets.csv
+[ 2026-01-24 19:00:07,591 ] 59 root - INFO - Converted 'Level' column to numeric using LabelEncoder
+[ 2026-01-24 19:00:07,591 ] 60 root - INFO - Label mapping: {'High': np.int64(0), 'Low': np.int64(1), 'Medium': np.int64(2)}
+[ 2026-01-24 19:00:07,591 ] 75 root - INFO - Dropped column: index
+[ 2026-01-24 19:00:07,591 ] 75 root - INFO - Dropped column: Patient Id
+[ 2026-01-24 19:00:07,596 ] 79 root - INFO - Raw Data is created
+[ 2026-01-24 19:00:07,596 ] 28 root - INFO - Data_dealing with Outliers
+[ 2026-01-24 19:00:07,596 ] 84 root - INFO - Outliers dealing Completed for Age column
+[ 2026-01-24 19:00:07,600 ] 89 root - INFO - train and test Data is created
+[ 2026-01-24 19:00:07,600 ] 21 root - INFO - Train data: artifacts/train.csv
+[ 2026-01-24 19:00:07,600 ] 22 root - INFO - Test data: artifacts/test.csv
+[ 2026-01-24 19:00:07,600 ] 25 root - INFO - Step 2: Data Processing
+[ 2026-01-24 19:00:07,604 ] 64 root - INFO - Read Train and Test Completed
+[ 2026-01-24 19:00:07,607 ] 65 root - INFO - The dataframe Head:  
+        Age  Gender  Air Pollution  Alcohol use  Dust Allergy  OccuPational Hazards  Genetic Risk  chronic Lung Disease  Balanced Diet  Obesity  Smoking  Passive Smoker  Chest Pain  Coughing of Blood  Fatigue  Weight Loss  Shortness of Breath  Wheezing  Swallowing Difficulty  Clubbing of Finger Nails  Frequent Cold  Dry Cough  Snoring  Level
+0 -0.764150       2              1            6             7                     5             3                     2              6        2        3               3           2                  2        3            3                    7         7                      4                         8              7          7        5      2
+1  1.318230       1              6            8             7                     7             6                     7              7        3        8               7           9                  6        5            2                    5         2                      3                         2              1          7        6      0
+2 -0.764150       2              1            6             7                     5             3                     2              6        2        3               3           2                  2        3            3                    7         7                      4                         8              7          7        5      2
+3  2.067887       1              6            8             7                     7             7                     6              2        4        1               2           4                  3        2            7                    6         5                      1                         9              3          4        2      2
+4  0.068802       1              2            3             5                     2             1                     1              1        1        4               3           2                  4        2            1                    3         4                      6                         1              3          2        2      1
+[ 2026-01-24 19:00:07,608 ] 66 root - INFO - The dataframe Head:  
+        Age  Gender  Air Pollution  Alcohol use  Dust Allergy  OccuPational Hazards  Genetic Risk  chronic Lung Disease  Balanced Diet  Obesity  Smoking  Passive Smoker  Chest Pain  Coughing of Blood  Fatigue  Weight Loss  Shortness of Breath  Wheezing  Swallowing Difficulty  Clubbing of Finger Nails  Frequent Cold  Dry Cough  Snoring  Level
+0  0.901754       2              1            6             7                     8             7                     6              7        7        3               4           8                  7        3            2                    6         4                      2                         3              1          2        1      2
+1  2.067887       1              6            8             7                     7             7                     6              2        4        1               2           4                  3        2            7                    6         5                      1                         9              3          4        2      2
+2 -1.263921       1              6            8             7                     7             7                     6              2        4        1               2           4                  3        2            7                    6         5                      1                         9              3          4        2      2
+3 -0.014493       2              7            7             7                     7             6                     7              7        7        7               7           7                  8        4            2                    3         1                      4                         5              6          7        5      0
+4  0.735163       2              1            6             7                     5             3                     2              6        2        3               3           2                  2        3            3                    7         7                      4                         8              7          7        5      2
+[ 2026-01-24 19:00:07,608 ] 68 root - INFO - Obtaining Preprocessing Object
+[ 2026-01-24 19:00:07,608 ] 29 root - INFO - Initiate Data Transformation Scalling
+[ 2026-01-24 19:00:07,608 ] 38 root - INFO - Data Transformation Pipeline Initiated
+[ 2026-01-24 19:00:07,612 ] 95 root - INFO - Applying Preprocessing object on training and test datasets.
+[ 2026-01-24 19:00:07,612 ] 31 root - INFO - Preprocessor saved at: artifacts/Preprocessor.pkl

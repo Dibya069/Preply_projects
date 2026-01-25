@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .info-box p {
+            color: #1976d2;
+            font-size: 0.95em;
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+        }
+        
+        .form-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            font-size: 1.5em;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="number"]:focus,
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-radius: 15px;
+            border-left: 5px solid #28a745;
+            text-align: center;
+        }
+
+        .result.high-risk {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            border-left-color: #dc3545;
+        }
+
+        .result.medium-risk {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-left-color: #ffc107;
+        }
+
+        .result.low-risk {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left-color: #28a745;
+        }
+
+        .result h2 {
+            color: #155724;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        .result.high-risk h2,
+        .result.high-risk p {
+            color: #721c24;
+        }
+
+        .result.medium-risk h2,
+        .result.medium-risk p {
+            color: #856404;
+        }
+
+        .result p {
+            color: #155724;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔮 Make Prediction</h1>
+        <p class="subtitle">Cancer Risk Classification</p>
+
+        <div class="info-box">
+            <p>📊 Enter all patient information below to get a cancer risk prediction (Low, High, or Medium)</p>
+        </div>
+
+        <form action="/predict" method="POST">
+            <!-- Patient Demographics -->
+            <div class="form-section">
+                <h2>� Patient Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="Age">Age:</label>
+                        <input type="number" step="1" id="Age" name="Age" placeholder="e.g., 33" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Gender">Gender (1=Male, 2=Female):</label>
+                        <input type="number" step="1" id="Gender" name="Gender" placeholder="1 or 2" min="1" max="2" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Environmental & Lifestyle Factors -->
+            <div class="form-section">
+                <h2>🌍 Environmental & Lifestyle Factors</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="Air Pollution">Air Pollution (1-8):</label>
+                        <input type="number" step="1" id="Air Pollution" name="Air Pollution" placeholder="e.g., 3" min="1" max="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Alcohol use">Alcohol Use (1-8):</label>
+                        <input type="number" step="1" id="Alcohol use" name="Alcohol use" placeholder="e.g., 4" min="1" max="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Dust Allergy">Dust Allergy (1-8):</label>
+                        <input type="number" step="1" id="Dust Allergy" name="Dust Allergy" placeholder="e.g., 5" min="1" max="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="OccuPational Hazards">Occupational Hazards (1-8):</label>
+                        <input type="number" step="1" id="OccuPational Hazards" name="OccuPational Hazards" placeholder="e.g., 4" min="1" max="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Genetic Risk">Genetic Risk (1-7):</label>
+                        <input type="number" step="1" id="Genetic Risk" name="Genetic Risk" placeholder="e.g., 3" min="1" max="7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="chronic Lung Disease">Chronic Lung Disease (1-7):</label>
+                        <input type="number" step="1" id="chronic Lung Disease" name="chronic Lung Disease" placeholder="e.g., 2" min="1" max="7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Balanced Diet">Balanced Diet (1-7):</label>
+                        <input type="number" step="1" id="Balanced Diet" name="Balanced Diet" placeholder="e.g., 4" min="1" max="7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Obesity">Obesity (1-7):</label>
+                        <input type="number" step="1" id="Obesity" name="Obesity" placeholder="e.g., 4" min="1" max="7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Smoking">Smoking (1-8):</label>
+                        <input type="number" step="1" id="Smoking" name="Smoking" placeholder="e.g., 3" min="1" max="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Passive Smoker">Passive Smoker (1-8):</label>
+                        <input type="number" step="1" id="Passive Smoker" name="Passive Smoker" placeholder="e.g., 2" min="1" max="8" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Symptoms -->
+            <div class="form-section">
+                <h2>🩺 Symptoms</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="Chest Pain">Chest Pain (1-9):</label>
+                        <input type="number" step="1" id="Chest Pain" name="Chest Pain" placeholder="e.g., 4" min="1" max="9" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Coughing of Blood">Coughing of Blood (1-9):</label>
+                        <input type="number" step="1" id="Coughing of Blood" name="Coughing of Blood" placeholder="e.g., 4" min="1" max="9" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Fatigue">Fatigue (1-9):</label>
+                        <input type="number" step="1" id="Fatigue" name="Fatigue" placeholder="e.g., 3" min="1" max="9" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Weight Loss">Weight Loss (1-8):</label>
+                        <input type="number" step="1" id="Weight Loss" name="Weight Loss" placeholder="e.g., 4" min="1" max="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Shortness of Breath">Shortness of Breath (1-9):</label>
+                        <input type="number" step="1" id="Shortness of Breath" name="Shortness of Breath" placeholder="e.g., 2" min="1" max="9" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Wheezing">Wheezing (1-8):</label>
+                        <input type="number" step="1" id="Wheezing" name="Wheezing" placeholder="e.g., 2" min="1" max="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Swallowing Difficulty">Swallowing Difficulty (1-8):</label>
+                        <input type="number" step="1" id="Swallowing Difficulty" name="Swallowing Difficulty" placeholder="e.g., 3" min="1" max="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Clubbing of Finger Nails">Clubbing of Finger Nails (1-9):</label>
+                        <input type="number" step="1" id="Clubbing of Finger Nails" name="Clubbing of Finger Nails" placeholder="e.g., 1" min="1" max="9" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Frequent Cold">Frequent Cold (1-7):</label>
+                        <input type="number" step="1" id="Frequent Cold" name="Frequent Cold" placeholder="e.g., 2" min="1" max="7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Dry Cough">Dry Cough (1-7):</label>
+                        <input type="number" step="1" id="Dry Cough" name="Dry Cough" placeholder="e.g., 3" min="1" max="7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Snoring">Snoring (1-7):</label>
+                        <input type="number" step="1" id="Snoring" name="Snoring" placeholder="e.g., 4" min="1" max="7" required>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">🔮 Get Prediction</button>
+        </form>
+
+        <a href="/" class="back-link">← Back to Home</a>
+
+        {% if final_result is defined %}
+        <div class="result {% if 'High' in final_result %}high-risk{% elif 'Medium' in final_result %}medium-risk{% else %}low-risk{% endif %}">
+            <h2>🎯 Cancer Risk Prediction</h2>
+            <p><strong>Risk Level:</strong> {{ final_result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+

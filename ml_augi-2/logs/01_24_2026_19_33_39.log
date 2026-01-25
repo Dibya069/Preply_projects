@@ -1,0 +1,68 @@
+[ 2026-01-24 19:33:42,006 ] 18 root - INFO - Step 1: Data Ingestion
+[ 2026-01-24 19:33:42,007 ] 40 root - INFO - Data Ingestion Mode START
+[ 2026-01-24 19:33:42,011 ] 51 root - INFO - Loaded data from file: /Users/dmohanty/Music/preply_proj/ml_augi-2/upload/cancer patient data sets.csv
+[ 2026-01-24 19:33:42,012 ] 59 root - INFO - Converted 'Level' column to numeric using LabelEncoder
+[ 2026-01-24 19:33:42,012 ] 60 root - INFO - Label mapping: {'High': np.int64(0), 'Low': np.int64(1), 'Medium': np.int64(2)}
+[ 2026-01-24 19:33:42,013 ] 75 root - INFO - Dropped column: index
+[ 2026-01-24 19:33:42,013 ] 75 root - INFO - Dropped column: Patient Id
+[ 2026-01-24 19:33:42,018 ] 79 root - INFO - Raw Data is created
+[ 2026-01-24 19:33:42,018 ] 28 root - INFO - Data_dealing with Outliers
+[ 2026-01-24 19:33:42,018 ] 84 root - INFO - Outliers dealing Completed for Age column
+[ 2026-01-24 19:33:42,024 ] 89 root - INFO - train and test Data is created
+[ 2026-01-24 19:33:42,024 ] 21 root - INFO - Train data: artifacts/train.csv
+[ 2026-01-24 19:33:42,024 ] 22 root - INFO - Test data: artifacts/test.csv
+[ 2026-01-24 19:33:42,024 ] 25 root - INFO - Step 2: Data Processing
+[ 2026-01-24 19:33:42,038 ] 64 root - INFO - Read Train and Test Completed
+[ 2026-01-24 19:33:42,042 ] 65 root - INFO - The dataframe Head:  
+        Age  Gender  Air Pollution  Alcohol use  Dust Allergy  OccuPational Hazards  Genetic Risk  chronic Lung Disease  Balanced Diet  Obesity  Smoking  Passive Smoker  Chest Pain  Coughing of Blood  Fatigue  Weight Loss  Shortness of Breath  Wheezing  Swallowing Difficulty  Clubbing of Finger Nails  Frequent Cold  Dry Cough  Snoring  Level
+0 -0.764150       2              1            6             7                     5             3                     2              6        2        3               3           2                  2        3            3                    7         7                      4                         8              7          7        5      2
+1  1.318230       1              6            8             7                     7             6                     7              7        3        8               7           9                  6        5            2                    5         2                      3                         2              1          7        6      0
+2 -0.764150       2              1            6             7                     5             3                     2              6        2        3               3           2                  2        3            3                    7         7                      4                         8              7          7        5      2
+3  2.067887       1              6            8             7                     7             7                     6              2        4        1               2           4                  3        2            7                    6         5                      1                         9              3          4        2      2
+4  0.068802       1              2            3             5                     2             1                     1              1        1        4               3           2                  4        2            1                    3         4                      6                         1              3          2        2      1
+[ 2026-01-24 19:33:42,044 ] 66 root - INFO - The dataframe Head:  
+        Age  Gender  Air Pollution  Alcohol use  Dust Allergy  OccuPational Hazards  Genetic Risk  chronic Lung Disease  Balanced Diet  Obesity  Smoking  Passive Smoker  Chest Pain  Coughing of Blood  Fatigue  Weight Loss  Shortness of Breath  Wheezing  Swallowing Difficulty  Clubbing of Finger Nails  Frequent Cold  Dry Cough  Snoring  Level
+0  0.901754       2              1            6             7                     8             7                     6              7        7        3               4           8                  7        3            2                    6         4                      2                         3              1          2        1      2
+1  2.067887       1              6            8             7                     7             7                     6              2        4        1               2           4                  3        2            7                    6         5                      1                         9              3          4        2      2
+2 -1.263921       1              6            8             7                     7             7                     6              2        4        1               2           4                  3        2            7                    6         5                      1                         9              3          4        2      2
+3 -0.014493       2              7            7             7                     7             6                     7              7        7        7               7           7                  8        4            2                    3         1                      4                         5              6          7        5      0
+4  0.735163       2              1            6             7                     5             3                     2              6        2        3               3           2                  2        3            3                    7         7                      4                         8              7          7        5      2
+[ 2026-01-24 19:33:42,044 ] 68 root - INFO - Obtaining Preprocessing Object
+[ 2026-01-24 19:33:42,044 ] 29 root - INFO - Initiate Data Transformation Scalling
+[ 2026-01-24 19:33:42,044 ] 38 root - INFO - Data Transformation Pipeline Initiated
+[ 2026-01-24 19:33:42,050 ] 95 root - INFO - Applying Preprocessing object on training and test datasets.
+[ 2026-01-24 19:33:42,050 ] 31 root - INFO - Preprocessor saved at: artifacts/Preprocessor.pkl
+[ 2026-01-24 19:33:42,050 ] 34 root - INFO - Step 3: Model Training
+[ 2026-01-24 19:33:42,050 ] 121 root - INFO - Splitting Dependent and Independet variable form train and test data
+[ 2026-01-24 19:33:42,542 ] 138 root - INFO - Model Reports: {'Random Forest': 1.0, 'Decision Tree': 1.0, 'Gradient Classification': 1.0}
+[ 2026-01-24 19:33:42,542 ] 146 root - INFO - Models with best score (1.0): ['Random Forest', 'Decision Tree', 'Gradient Classification']
+[ 2026-01-24 19:33:42,542 ] 150 root - INFO - Multiple models have the same score. Using feature importance to select the best model.
+[ 2026-01-24 19:33:42,607 ] 43 root - INFO - Feature importances: [0.00599509 0.00079367 0.03231655 0.0420499  0.05486029 0.02249725
+ 0.03206801 0.02380653 0.06203547 0.08845601 0.02763777 0.08879092
+ 0.0307805  0.12411726 0.06953246 0.02424407 0.04245456 0.07235975
+ 0.03444804 0.04410258 0.02522108 0.01690494 0.03452729]
+[ 2026-01-24 19:33:42,607 ] 60 root - INFO - Random Forest - Significant features: 21, Entropy: 2.9231
+[ 2026-01-24 19:33:42,607 ] 162 root - INFO - Feature scores: {'Random Forest': (np.int64(21), np.float64(2.9231118072694335))}
+[ 2026-01-24 19:33:42,862 ] 106 root - INFO - Feature importance plot saved: artifacts/feature_importance/Random_Forest_importance.png
+[ 2026-01-24 19:33:42,863 ] 114 root - INFO - Feature importance CSV saved: artifacts/feature_importance/Random_Forest_importance.csv
+[ 2026-01-24 19:33:42,864 ] 43 root - INFO - Feature importances: [0.         0.         0.         0.         0.         0.07133167
+ 0.         0.         0.         0.15151495 0.         0.
+ 0.         0.37338392 0.         0.         0.         0.25790182
+ 0.         0.03272428 0.         0.         0.11314337]
+[ 2026-01-24 19:33:42,864 ] 60 root - INFO - Decision Tree - Significant features: 6, Entropy: 1.5501
+[ 2026-01-24 19:33:42,864 ] 162 root - INFO - Feature scores: {'Random Forest': (np.int64(21), np.float64(2.9231118072694335)), 'Decision Tree': (np.int64(6), np.float64(1.5500614157553068))}
+[ 2026-01-24 19:33:42,906 ] 106 root - INFO - Feature importance plot saved: artifacts/feature_importance/Decision_Tree_importance.png
+[ 2026-01-24 19:33:42,907 ] 114 root - INFO - Feature importance CSV saved: artifacts/feature_importance/Decision_Tree_importance.csv
+[ 2026-01-24 19:33:43,082 ] 43 root - INFO - Feature importances: [2.97098962e-02 2.44546866e-17 3.58795571e-03 1.44953210e-01
+ 2.38198256e-02 2.91680327e-05 8.62060513e-04 2.44558176e-03
+ 9.82930660e-09 5.66694341e-03 9.16681220e-02 1.25813426e-01
+ 4.32839723e-03 1.77269714e-01 1.63168841e-01 2.37165393e-04
+ 6.48774933e-03 1.42016846e-01 1.21724715e-02 3.34046149e-02
+ 2.57335021e-02 2.59009903e-03 4.03440121e-03]
+[ 2026-01-24 19:33:43,082 ] 60 root - INFO - Gradient Classification - Significant features: 11, Entropy: 2.2609
+[ 2026-01-24 19:33:43,082 ] 162 root - INFO - Feature scores: {'Random Forest': (np.int64(21), np.float64(2.9231118072694335)), 'Decision Tree': (np.int64(6), np.float64(1.5500614157553068)), 'Gradient Classification': (np.int64(11), np.float64(2.260889535104288))}
+[ 2026-01-24 19:33:43,143 ] 106 root - INFO - Feature importance plot saved: artifacts/feature_importance/Gradient_Classification_importance.png
+[ 2026-01-24 19:33:43,144 ] 114 root - INFO - Feature importance CSV saved: artifacts/feature_importance/Gradient_Classification_importance.csv
+[ 2026-01-24 19:33:43,145 ] 173 root - INFO - Selected Random Forest based on feature importance (uses most features)
+[ 2026-01-24 19:33:43,219 ] 186 root - INFO - Final best model: Random Forest, Score: 1.0
+[ 2026-01-24 19:33:43,222 ] 193 root - INFO - Model saved at: artifacts/model.pkl
