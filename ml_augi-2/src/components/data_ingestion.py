@@ -60,12 +60,12 @@ class DataIngestion:
                 logging.info(f"Label mapping: {dict(zip(self.label_encoder.classes_, self.label_encoder.transform(self.label_encoder.classes_)))}")
 
                 # Save the label encoder for later use in predictions
-                # from src.utils import save_obj
-                # save_obj(
-                #     file_path=self.ingestion_configuration.label_encoder_path,
-                #     obj=self.label_encoder
-                # )
-                # logging.info(f"Label encoder saved at: {self.ingestion_configuration.label_encoder_path}")
+                from src.utils import save_obj
+                save_obj(
+                    file_path=self.ingestion_configuration.label_encoder_path,
+                    obj=self.label_encoder
+                )
+                logging.info(f"Label encoder saved at: {self.ingestion_configuration.label_encoder_path}")
 
             # Drop unnecessary columns if they exist
             columns_to_drop = ['index', 'Patient Id']

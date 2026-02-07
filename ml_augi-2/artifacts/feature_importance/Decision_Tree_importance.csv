@@ -1,10 +1,11 @@
 Feature,Importance
 Coughing of Blood,0.3733839159951228
 Wheezing,0.2579018174935313
-Obesity,0.1515149493879407
+Obesity,0.12898217123722455
 Snoring,0.11314336731190394
-OccuPational Hazards,0.07133166776222805
+Air Pollution,0.07133166776222805
 Clubbing of Finger Nails,0.03272428204927322
+Alcohol use,0.022532778150716117
 Dry Cough,0.0
 Frequent Cold,0.0
 Swallowing Difficulty,0.0
@@ -18,7 +19,6 @@ Smoking,0.0
 Balanced Diet,0.0
 chronic Lung Disease,0.0
 Genetic Risk,0.0
+OccuPational Hazards,0.0
 Dust Allergy,0.0
-Alcohol use,0.0
-Air Pollution,0.0
 Passive Smoker,0.0

@@ -1,0 +1,22 @@
+[ 2026-02-07 17:33:48,387 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2026-02-07 17:33:48,399 ] 97 werkzeug - INFO -  * Debugger PIN: 468-316-275
+[ 2026-02-07 17:34:10,879 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Feb/2026 17:34:10] "GET / HTTP/1.1" 200 -
+[ 2026-02-07 17:34:11,069 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Feb/2026 17:34:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2026-02-07 17:34:14,257 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Feb/2026 17:34:14] "GET /predict HTTP/1.1" 200 -
+[ 2026-02-07 17:35:26,930 ] 104 root - INFO - Input features shape: (1, 23)
+[ 2026-02-07 17:35:26,950 ] 105 root - INFO - Input features:
+   Age  Gender  Air Pollution  Alcohol use  Dust Allergy  OccuPational Hazards  Genetic Risk  chronic Lung Disease  Balanced Diet  Obesity  Smoking  Passive Smoker  Chest Pain  Coughing of Blood  Fatigue  Weight Loss  Shortness of Breath  Wheezing  Swallowing Difficulty  Clubbing of Finger Nails  Frequent Cold  Dry Cough  Snoring
+0   22       2              3            4             4                     4             4                     4              4        4        4               4           4                  4        4            4                    4         4                      4                         4              4          4        4
+[ 2026-02-07 17:35:26,973 ] 64 root - INFO - Label encoder loaded successfully
+[ 2026-02-07 17:35:27,018 ] 76 root - INFO - Prediction probabilities: [[0.01 0.37 0.62]]
+[ 2026-02-07 17:35:27,023 ] 83 root - INFO - Predictions converted from [2] to ['Medium']
+[ 2026-02-07 17:35:27,023 ] 84 root - INFO - Class labels: ['High' 'Low' 'Medium']
+[ 2026-02-07 17:35:27,023 ] 111 root - INFO - Raw prediction: ['Medium']
+[ 2026-02-07 17:35:27,024 ] 112 root - INFO - Prediction type: <class 'str'>
+[ 2026-02-07 17:35:27,024 ] 113 root - INFO - Probabilities: [[0.01 0.37 0.62]]
+[ 2026-02-07 17:35:27,024 ] 114 root - INFO - Class labels: ['High' 'Low' 'Medium']
+[ 2026-02-07 17:35:27,024 ] 128 root - INFO - Final prediction result: Medium
+[ 2026-02-07 17:35:27,024 ] 129 root - INFO - Confidence: 62.0%
+[ 2026-02-07 17:35:27,024 ] 130 root - INFO - All probabilities: {'High': np.float64(1.0), 'Low': np.float64(37.0), 'Medium': np.float64(62.0)}
+[ 2026-02-07 17:35:27,026 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Feb/2026 17:35:27] "POST /predict HTTP/1.1" 200 -
+[ 2026-02-07 18:40:27,478 ] 97 werkzeug - INFO -  * Detected change in '/Users/dmohanty/Music/preply_proj/github_proj/ml_augi-2/src/pipelines/predict_pipeline.py', reloading

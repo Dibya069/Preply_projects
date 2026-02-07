@@ -312,6 +312,22 @@
         <div class="result {% if 'High' in final_result %}high-risk{% elif 'Medium' in final_result %}medium-risk{% else %}low-risk{% endif %}">
             <h2>🎯 Cancer Risk Prediction</h2>
             <p><strong>Risk Level:</strong> {{ final_result }}</p>
+
+            {% if confidence is defined %}
+            <p><strong>Confidence:</strong> {{ confidence }}%</p>
+            {% endif %}
+
+            {% if all_probabilities %}
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 2px solid rgba(255,255,255,0.3);">
+                <h3 style="margin-bottom: 10px; font-size: 1.1em;">📊 Probability Breakdown:</h3>
+                {% for label, prob in all_probabilities.items() %}
+                <p style="margin: 8px 0; font-size: 0.95em;">
+                    <strong>{{ label }}:</strong> {{ prob }}%
+                    <span style="display: inline-block; width: {{ prob }}%; height: 8px; background: rgba(255,255,255,0.5); margin-left: 10px; border-radius: 4px; vertical-align: middle;"></span>
+                </p>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
         {% endif %}
     </div>

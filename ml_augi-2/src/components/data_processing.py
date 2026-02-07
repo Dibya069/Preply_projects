@@ -74,11 +74,11 @@ class DataTransformation:
 
             ## dividing dataset into dependent and independent
             ## Train data
-            input_feature_train_df = train_df.drop(columns=drop_col, axis=1)
+            input_feature_train_df = train_df.drop(columns=drop_col)
             traget_feature_train_df = train_df[target_col]
 
             ## Test data
-            input_feature_test_df = test_df.drop(columns=drop_col, axis=1)
+            input_feature_test_df = test_df.drop(columns=drop_col)
             traget_feature_test_df = test_df[target_col]
 
             ## Data Transform

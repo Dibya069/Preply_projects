@@ -104,22 +104,40 @@ def predict_datapoint():
         logging.info(f"Input features shape: {final_new_data.shape}")
         logging.info(f"Input features:\n{final_new_data.to_string()}")
 
-        # Make prediction
+        # Make prediction with probabilities
         predict_pipeline = PredictPipelines(request=request)
-        pred = predict_pipeline.predict(final_new_data)
+        pred_labels, probabilities, class_labels = predict_pipeline.predict_proba(final_new_data)
 
-        logging.info(f"Raw prediction: {pred}")
-        logging.info(f"Prediction type: {type(pred[0])}")
+        logging.info(f"Raw prediction: {pred_labels}")
+        logging.info(f"Prediction type: {type(pred_labels[0])}")
+        logging.info(f"Probabilities: {probabilities}")
+        logging.info(f"Class labels: {class_labels}")
 
         # The prediction is already converted to label by LabelEncoder
-        result = pred[0] if isinstance(pred[0], str) else str(pred[0])
+        result = pred_labels[0] if isinstance(pred_labels[0], str) else str(pred_labels[0])
+
+        # Get confidence scores for each class
+        proba_dict = {}
+        if class_labels is not None:
+            for i, label in enumerate(class_labels):
+                proba_dict[label] = round(probabilities[0][i] * 100, 2)  # Convert to percentage
+
+        # Get confidence for predicted class
+        max_confidence = round(max(probabilities[0]) * 100, 2)
 
         logging.info(f"Final prediction result: {result}")
+        logging.info(f"Confidence: {max_confidence}%")
+        logging.info(f"All probabilities: {proba_dict}")
         print(f"\n{'='*80}")
         print(f"🔮 PREDICTION RESULT: {result}")
+        print(f"📊 CONFIDENCE: {max_confidence}%")
+        print(f"📈 ALL PROBABILITIES: {proba_dict}")
         print(f"{'='*80}\n")
 
-        return render_template('prediction.html', final_result=result)
+        return render_template('prediction.html',
+                             final_result=result,
+                             confidence=max_confidence,
+                             all_probabilities=proba_dict)
 
     except Exception as e:
         logging.error(f"Error in prediction: {str(e)}")
